@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- change .png photo to the actual logo -->
+  <link rel="shortcut icon" type="x-icon" href="test.png"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AcmeCab</title>
   <link rel="stylesheet" href="style.css">
@@ -10,21 +12,23 @@
   <!-- Navbar Section -->
   <nav class="navbar">
     <div class="navbar__container">
-      <a href="#home" id="navbar__logo">AcmeCab</a>
+       <!-- change .png photo to the actual logo -->
+      <a href="#home" id="navbar__logo"></a>
       <div class="navbar__toggle" id="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </div>
+      <img src="test.png" class="logo">
       <ul class="navbar__menu">
         <li class="navbar__item">
           <a href="#home" class="navbar__links" id="home-page">Home</a>
         </li>
         <li class="navbar__item">
-          <a href="#about" class="navbar__links" id="about-page">Services</a>
+          <a href="#about" class="navbar__links" id="about-page">About</a>
         </li>
         <li class="navbar__item">
-          <a href="#services" class="navbar__links" id="services-page">About</a>
+          <a href="#services" class="navbar__links" id="services-page">Services</a>
         </li>
         <li class="navbar__btn">
           <a href="#sign-up" class="button" id="signup">Log In</a>
@@ -142,6 +146,28 @@
         </section>
       </div>
 
-  <script src="app.js"></script>
+  <script src="app.js">
+
+    var header = document.getElementById("navbar__container")
+    var home = document.getElementById("home-page")
+    var services = document.getElementById("services-page")
+    var about = document.getElementById("about-page")
+
+    // I want to have each top header button switch to a new photo
+    //If you disagree, then we will stay with the long scroll, and this code can be deleted
+    header.onclick = function() {
+      header.style.backgroundImage = "url(test.png)"
+    }
+    home.onclick = function() {
+      header.style.backgroundImage = "url(test_2.png)"
+    }
+    services.onclick = function() {
+      header.style.backgroundImage = "url(test_3.png)"
+    }
+    about.onclick = function() {
+      header.style.backgroundImage = "url(test_4.png)"
+    }
+
+  </script>
 </body>
 </html>
