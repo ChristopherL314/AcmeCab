@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- change .png photo to the actual logo -->
-  <link rel="shortcut icon" type="x-icon" href="test.png"> 
+  <link rel="shortcut icon" type="x-icon" href="symbol.png"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AcmeCab</title>
   <link rel="stylesheet" href="style.css">
@@ -12,26 +11,55 @@
   <!-- Navbar Section -->
   <nav class="navbar">
     <div class="navbar__container">
-       <!-- change .png photo to the actual logo -->
+
       <a href="#home" id="navbar__logo"></a>
       <div class="navbar__toggle" id="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </div>
-      <img src="test.png" class="logo">
-      <ul class="navbar__menu">
+      <img src="symbol.png" class="logo">
+      <ul class="navbar_menu">
         <li class="navbar__item">
-          <a href="#home" class="navbar__links" id="home-page">Home</a>
+          <!-- Inside Discover I want "Our Services", not as an eqally global choices -->
+          <a href="#about" class="navbar__links" id="about-page">Discover</a>
         </li>
         <li class="navbar__item">
-          <a href="#about" class="navbar__links" id="about-page">About</a>
+          <a href="#services" class="navbar__links" id="services-page">Our Services</a>
         </li>
         <li class="navbar__item">
-          <a href="#services" class="navbar__links" id="services-page">Services</a>
+          <a href="#services" class="navbar__links" id="customer-service-page">Customer Service</a>
         </li>
-        <li class="navbar__btn">
-          <a href="#sign-up" class="button" id="signup">Log In</a>
+        <li class="navbar__item">
+          <!-- This is to retail drop-shipping shirts/stuff like "I stand with Drivers" or something -->
+          <a href="#services" class="navbar__links" id="store-page">Store</a> 
+        </li>
+        <div id="app">
+          <form @submit.prevent="login">
+              <input v-model="username" type="text" placeholder="Username">
+              <input v-model="password" type="password" placeholder="Password">
+              <button type="submit">Log In</button>
+          </form>
+      </div>
+      <script>
+          const app = Vue.createApp({
+              data() {
+                  return {
+                      username: '', // Initialize empty strings for user input
+                      password: ''
+                  }
+              },
+              methods: {
+                  login() {
+                      // Here, you can handle the login logic (e.g., validate credentials)
+                      // For demonstration purposes, let's just log the input values
+                      console.log('Username:', this.username);
+                      console.log('Password:', this.password);
+                  }
+              }
+          });
+          app.mount('#app');
+      </script>      
         </li>
       </ul>
     </div>
@@ -66,24 +94,24 @@
     <h1>Our Services</h1>
     <div class="services__wrapper">
       <div class="services__card">
-        <h2>Hail and AcmeCab</h2>
+        <h2>Hail an AcmeCab</h2>
         <p>Make the Switch Today</p>
         <div class="services__btn"><button>Get Started</button></div>
       </div>
       <div class="services__card">
         <h2>Want to Drive and Earn More than Ever Before?</h2>
-        <p>Get Qualified Today!</p>
-        <div class="services__btn"><button>Get Started</button></div>
+        <p>Don't Fool Around With the Other Guys.</p>
+        <div class="services__btn"><button>Get Qualified Today!</button></div>
       </div>
       <div class="services__card">
         <h2>Annoyed with Spending More than You Wanted?</h2>
         <p>Leave that Annoyance Behind, Forever.</p>
-        <div class="services__btn"><button>Get Started</button></div>
+        <div class="services__btn"><button>Start Saving Today!</button></div>
       </div>
       <div class="services__card">
         <h2>Stakeholder Disclosures</h2>
-        <p>Our Pricing Model</p>
-        <div class="services__btn"><button>Get Started</button></div>
+        <p>DISCLOSURES</p>
+        <div class="services__btn"><button>Reports and More!</button></div>
       </div>
     </div>
   </div>
@@ -107,7 +135,7 @@
           <div class="footer__link--wrapper">
             <div class="footer__link--items">
               <h2>About Us</h2>
-              <a href="/sign-up">How It Works</a>
+              <a href="/sign-up">How AcmeCab Works</a>
               <a href="/sign-up">Testimonials</a>
               <a href="/sign-up">Careers</a>
               <a href="/sign-up">Terms of Service</a>
@@ -125,23 +153,23 @@
               <a href="/sign-up">Facebook</a>
               <a href="/sign-up">Youtube</a>
               <a href="/sign-up">LinkedIn</a>
-              <a href="/sign-up">twitter</a>
+              <a href="/sign-up">X (Formally Twitter)</a>
             </div>
           </div>
         </div>
         <section class="social__media">
           <div class="social__media--wrap">
-            <div class="footer__logo">
-              <a href="/" id="footer__logo">NAME_OF_WEBSITE</a>
-            </div>
-            <p class="website__rights">COPYRIGHT_SYMBOL COLOR 2024. All Rights Reserved</p>
+            <div class="footer__logo"></div>
+            <p class="website__rights">©AcmeCab, LLC 2024.</p>
+            <p class="rights-reserved">All Rights Reserved.</p>
             <div class="social__icons">
-              <a href="/" class="social__icon--link"><i class="fab fa-facebook"></i></a> target="_blank"
-              <a href="/" class="social__icon--link"><i class="fab fa-instagram"></i></a> target="_blank"
-              <a href="/" class="social__icon--link"><i class="fab fa-youtube"></i></a> target="_blank"
-              <a href="/" class="social__icon--link"><i class="fab fa-linkedin"></i></a> target="_blank"
-              <a href="/" class="social__icon--link"><i class="fab fa-twitter"></i></a> target="_blank"
+              <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-youtube"></i></a>
+              <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
+            
           </div>
         </section>
       </div>
